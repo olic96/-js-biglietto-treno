@@ -6,6 +6,7 @@ const howOldAreYou = Number(prompt("Quanti anni hai?"));
 
 // calcolo il prezzo del biglietto al km per 0.21 euro
 const prize4km = howManyKm * 0.21;
+console.log(prize4km)
 // calcolo il prezzo per i minorenni
 const discount4Teens = 0.2;
 // calcolo il prezzo per gli over 65
@@ -16,12 +17,20 @@ const discount4Elders = 0.4;
 let discountTicket = prize4km;
 if (howOldAreYou < 18) {
     discountTicket = discountTicket * discount4Teens;
-    console.log("il tuo biglietto costa")
-} else if (howOldAreYou > 65) {
+    console.log(discountTicket)
+} else if (howOldAreYou => 65) {
     discountTicket = discountTicket * discount4Elders;
-    console.log("il tuo biglietto costa")
+    console.log(discountTicket)
 }
 
 // calcolo il prezzo al km per 0.21 euro espresso in numeri decimali
+discountTicket = discountTicket.toFixed(2);
+
+// messaggio 
+document.getElementById("messaggio").innerHTML = `Il costo del tuo biglietto è:`;
+// costo
+document.getElementById("costo").innerHTML = `${discountTicket} $`
+
+
    
    
